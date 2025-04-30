@@ -7,16 +7,20 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+<meta name="description" content="一、在 vue2 引入12345678910111213&lt;div class&#x3D;&quot;pie&quot; ref&#x3D;&quot;echarRef&quot;&gt;&lt;&#x2F;div&gt;-----------------------------------------------------------------import * as echarts from &quot;echart">
+<meta property="og:type" content="article">
+<meta property="og:title" content="echarts 问题汇总">
+<meta property="og:url" content="http://example.com/2022/09/21/echarts%20%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、在 vue2 引入12345678910111213&lt;div class&#x3D;&quot;pie&quot; ref&#x3D;&quot;echarRef&quot;&gt;&lt;&#x2F;div&gt;-----------------------------------------------------------------import * as echarts from &quot;echart">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-21T09:45:09.000Z">
+<meta property="article:modified_time" content="2025-04-30T07:15:16.918Z">
 <meta property="article:author" content="钰淇">
 <meta name="twitter:card" content="summary">
 
 
-<title >Hexo</title>
+<title >echarts 问题汇总</title>
 
 <!-- Favicon -->
 
@@ -55,7 +59,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"example.com","author":"钰淇","root":"/","typed_text":null,"theme_version":"2.2.4","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":false,"isHome":true,"postUpdate":"2025-04-30 15:16:33"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2025-04-30 15:15:16"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.4" id="trm-switch-style">
@@ -139,7 +143,7 @@
     <nav>
         <ul>
             
-            <li class="menu-item-has-children current-menu-item">
+            <li class="menu-item-has-children ">
                 <a  href="/" target="">
                     首页
                 </a>
@@ -179,7 +183,8 @@
             <!-- top bar end -->
 
             <!-- body -->
-            <div class="trm-content-start">
+            
+<div class="trm-content-start">
     <!-- banner -->
     <div class="trm-banner">
     
@@ -200,10 +205,10 @@
                     <!-- banner title -->
                     <div class="trm-banner-text ">
                         <div class="trm-label trm-mb-20">
-                            Hi my new friend!
+                            NEWS LETTER
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            
+                            echarts 问题汇总
                         </h1>
 
                         
@@ -213,7 +218,7 @@
                                 </li>
                                 <li>
                                     <span>
-                                        index.html
+                                        2022
                                     </span>
                                 </li>
                             </ul>
@@ -289,341 +294,54 @@
             
             <div class="trm-page-content col-lg-8">
                 <div id="trm-content" class="trm-content">
-                    <!-- categories -->
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            09/21
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            17:45
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            钰淇
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h3 id="一、在-vue2-引入"><a href="#一、在-vue2-引入" class="headerlink" title="一、在 vue2 引入"></a>一、在 vue2 引入</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="keyword">class</span>=<span class="string">&quot;pie&quot;</span> ref=<span class="string">&quot;echarRef&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">-----------------------------------------------------------------</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> echarts <span class="keyword">from</span> <span class="string">&quot;echarts&quot;</span></span><br><span class="line"><span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">const</span> myEcharts = eachrts.<span class="title function_">init</span>(<span class="variable language_">this</span>.<span class="property">$refs</span>.<span class="property">echarRef</span>)</span><br><span class="line">	myEcharts.<span class="title function_">setOption</span>(&#123;</span><br><span class="line">		<span class="comment">// 这里面复制官网例子东西</span></span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 注: div 一定要写宽高</span></span><br></pre></td></tr></table></figure>
 
-    <div class="row hidden-sm">
-        
-        
-        <div class="col-lg-6">
-            <!-- categories card -->
-<div class="trm-blog-categories trm-scroll-animation">
-    <h6>
-        Bug 与日常
-        <span class="trm-number">
-            11
-        </span>
-    </h6>
-    <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-    <a href="/categories/Bug-%E4%B8%8E%E6%97%A5%E5%B8%B8/." class="trm-label">
-        查看分类 
-        <i class="iconfont fas fa-arrow-right arrow-right"></i>
-    </a>
-</div>
-<!-- categories card end -->
-        </div>
-        
-        <div class="col-lg-6">
-            <!-- categories card -->
-<div class="trm-blog-categories trm-scroll-animation">
-    <h6>
-        GIS
-        <span class="trm-number">
-            2
-        </span>
-    </h6>
-    <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-    <a href="/categories/GIS/." class="trm-label">
-        查看分类 
-        <i class="iconfont fas fa-arrow-right arrow-right"></i>
-    </a>
-</div>
-<!-- categories card end -->
-        </div>
-        
-    </div>
+<h3 id="二、再次点击-echarts-页面不加载"><a href="#二、再次点击-echarts-页面不加载" class="headerlink" title="二、再次点击 echarts 页面不加载"></a>二、再次点击 echarts 页面不加载</h3><p>1.问题描述<br>echarts 在第一次加载的时候正常显示，但再次点击此页面图标不显示，后台不报错</p>
+<p>2.造成问题的原因<br>一共是两个页面，但只配置了一个路由，再次加载就会出现不出现图标</p>
+<p>3.解决办法<br>将页面配置不同的路由，重新加载一边</p>
+<h3 id="三、echarts-中图标的位置"><a href="#三、echarts-中图标的位置" class="headerlink" title="三、echarts 中图标的位置"></a>三、echarts 中图标的位置</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">legend</span>: &#123;</span><br><span class="line">    <span class="attr">orient</span>: <span class="string">&quot;horizontal&quot;</span>,  <span class="comment">// 垂直</span></span><br><span class="line">    <span class="attr">x</span>: <span class="string">&quot;right&quot;</span>,</span><br><span class="line">    <span class="attr">y</span>: <span class="string">&quot;center&quot;</span>,</span><br><span class="line">    <span class="attr">show</span>:<span class="literal">false</span>, <span class="comment">// 不显示</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>问题延展： 如果不想显示坐标轴之类的，可以在对应的对象中添加此属性即可</p>
+<h3 id="四、改变-legend-文字颜色"><a href="#四、改变-legend-文字颜色" class="headerlink" title="四、改变 legend 文字颜色"></a>四、改变 legend 文字颜色</h3><p>默认情况下，文字显示的是黑色，如果想在暗色系使用，则需要改变字体颜色</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">series</span>: [</span><br><span class="line">	&#123; </span><br><span class="line">     <span class="attr">textStyle</span>: &#123;</span><br><span class="line">     <span class="attr">color</span>: <span class="string">&quot;#fff&quot;</span>, <span class="comment">// 文字颜色</span></span><br><span class="line">     &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 
-<!-- categories end -->
+<h3 id="五、在饼状图添加标线"><a href="#五、在饼状图添加标线" class="headerlink" title="五、在饼状图添加标线"></a>五、在饼状图添加标线</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">series</span>:[</span><br><span class="line">	<span class="attr">labelLine</span>: &#123;</span><br><span class="line">	  <span class="attr">normal</span>: &#123;</span><br><span class="line">	    <span class="attr">length</span>: <span class="number">5</span>, <span class="comment">// 改变标示线的长度</span></span><br><span class="line">	    <span class="attr">lineStyle</span>: &#123;</span><br><span class="line">	      <span class="attr">color</span>: <span class="string">&#x27;#fff&#x27;</span>, <span class="comment">// 改变标示线的颜色</span></span><br><span class="line">	    &#125;,</span><br><span class="line">	  &#125;,</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">label</span>: &#123;</span><br><span class="line">	  <span class="attr">normal</span>: &#123;</span><br><span class="line">	    <span class="attr">textStyle</span>: &#123;</span><br><span class="line">	      <span class="attr">color</span>: <span class="string">&#x27;#fff&#x27;</span> <span class="comment">// 改变标示文字的颜色</span></span><br><span class="line">	    &#125;,</span><br><span class="line">	    <span class="attr">show</span>: <span class="variable language_">this</span>.<span class="property">markings</span>,</span><br><span class="line">	  &#125;,</span><br><span class="line">	&#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 
-<!-- newest publications -->
-<div class="row">
-    
-        <div class="col-lg-12">
-            <!-- title -->
-            <h5 class="trm-title-with-divider">
-                最近发布 
-                <span data-number="01"></span>
-            </h5>
-        </div>
+
+</article>
     
     
-        <div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2024/08/22/%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%20500/" class="trm-cover-frame trm-anima-link">
-            
-            
-                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
-            
-        </a>
-        
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" /categories/Bug-%E4%B8%8E%E6%97%A5%E5%B8%B8/">
-                    Bug 与日常
-                </a>
-            </div>
-            <h5>
-                <a href="/2024/08/22/%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%20500/" class="trm-anima-link">
-                    上传文件 500
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>24/08/22</li>
-                <li>18:08</li>
-                
-                
-            </ul>
-        </div>
-    </div>
+
 </div>
-    
-        <div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2024/08/22/%E6%A0%B9%E6%8D%AE%E5%86%85%E5%AE%B9%E5%BE%AA%E7%8E%AF%E7%94%9F%E6%88%90%E5%9B%BE%E6%A0%87/" class="trm-cover-frame trm-anima-link">
-            
-            
-                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
-            
-        </a>
-        
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" /categories/Bug-%E4%B8%8E%E6%97%A5%E5%B8%B8/">
-                    Bug 与日常
-                </a>
-            </div>
-            <h5>
-                <a href="/2024/08/22/%E6%A0%B9%E6%8D%AE%E5%86%85%E5%AE%B9%E5%BE%AA%E7%8E%AF%E7%94%9F%E6%88%90%E5%9B%BE%E6%A0%87/" class="trm-anima-link">
-                    图标循环生成，并垂直居中
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>24/08/22</li>
-                <li>18:08</li>
-                
-                
-            </ul>
-        </div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
     </div>
-</div>
-    
-        <div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2024/04/10/el-upload%20%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%EF%BC%88plus%EF%BC%89/" class="trm-cover-frame trm-anima-link">
-            
-            
-                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
-            
-        </a>
-        
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" /categories/Bug-%E4%B8%8E%E6%97%A5%E5%B8%B8/">
-                    Bug 与日常
-                </a>
-            </div>
-            <h5>
-                <a href="/2024/04/10/el-upload%20%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%EF%BC%88plus%EF%BC%89/" class="trm-anima-link">
-                    el-upload 上传图片（plus）
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>24/04/10</li>
-                <li>17:17</li>
-                
-                
-            </ul>
-        </div>
-    </div>
-</div>
-    
-        <div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2024/04/08/%E8%B7%B3%E8%BD%AC%E9%9A%90%E8%97%8F%E8%B7%AF%E7%94%B1%EF%BC%8C%E5%B7%A6%E4%BE%A7%E8%8F%9C%E5%8D%95%E4%B8%8D%E9%AB%98%E4%BA%AE/" class="trm-cover-frame trm-anima-link">
-            
-            
-                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
-            
-        </a>
-        
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" /categories/Bug-%E4%B8%8E%E6%97%A5%E5%B8%B8/">
-                    Bug 与日常
-                </a>
-            </div>
-            <h5>
-                <a href="/2024/04/08/%E8%B7%B3%E8%BD%AC%E9%9A%90%E8%97%8F%E8%B7%AF%E7%94%B1%EF%BC%8C%E5%B7%A6%E4%BE%A7%E8%8F%9C%E5%8D%95%E4%B8%8D%E9%AB%98%E4%BA%AE/" class="trm-anima-link">
-                    跳转隐藏路由，左侧菜单不高亮
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>24/04/08</li>
-                <li>16:05</li>
-                
-                
-            </ul>
-        </div>
-    </div>
-</div>
-    
-        <div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2023/12/20/%E9%A1%B5%E9%9D%A2%E8%87%AA%E9%80%82%E5%BA%94/" class="trm-cover-frame trm-anima-link">
-            
-            
-                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
-            
-        </a>
-        
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" /categories/Bug-%E4%B8%8E%E6%97%A5%E5%B8%B8/">
-                    Bug 与日常
-                </a>
-            </div>
-            <h5>
-                <a href="/2023/12/20/%E9%A1%B5%E9%9D%A2%E8%87%AA%E9%80%82%E5%BA%94/" class="trm-anima-link">
-                    页面自适应
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>23/12/20</li>
-                <li>16:05</li>
-                
-                
-            </ul>
-        </div>
-    </div>
-</div>
-    
-        <div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2023/09/07/vue%20%E6%89%93%E5%8C%85%E5%90%8E%E4%B8%8D%E8%83%BD%E9%A2%84%E8%A7%88/" class="trm-cover-frame trm-anima-link">
-            
-            
-                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
-            
-        </a>
-        
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" /categories/Bug-%E4%B8%8E%E6%97%A5%E5%B8%B8/">
-                    Bug 与日常
-                </a>
-            </div>
-            <h5>
-                <a href="/2023/09/07/vue%20%E6%89%93%E5%8C%85%E5%90%8E%E4%B8%8D%E8%83%BD%E9%A2%84%E8%A7%88/" class="trm-anima-link">
-                    vue  打包后不能预览
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>23/09/07</li>
-                <li>16:05</li>
-                
-                
-            </ul>
-        </div>
-    </div>
-</div>
-    
-        <div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2023/04/06/el-tree%20%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" class="trm-cover-frame trm-anima-link">
-            
-            
-                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
-            
-        </a>
-        
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" /categories/Bug-%E4%B8%8E%E6%97%A5%E5%B8%B8/">
-                    Bug 与日常
-                </a>
-            </div>
-            <h5>
-                <a href="/2023/04/06/el-tree%20%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" class="trm-anima-link">
-                    el-tree 问题汇总
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>23/04/06</li>
-                <li>17:17</li>
-                
-                
-            </ul>
-        </div>
-    </div>
-</div>
-    
-        <div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2023/03/07/%E6%B8%85%E9%99%A4mapbox%E6%95%B0%E6%8D%AE/" class="trm-cover-frame trm-anima-link">
-            
-            
-                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
-            
-        </a>
-        
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" /categories/GIS/">
-                    GIS
-                </a>
-            </div>
-            <h5>
-                <a href="/2023/03/07/%E6%B8%85%E9%99%A4mapbox%E6%95%B0%E6%8D%AE/" class="trm-anima-link">
-                    清除 mapbox 数据
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>23/03/07</li>
-                <li>16:05</li>
-                
-                
-            </ul>
-        </div>
-    </div>
-</div>
-    
-        <div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2023/03/06/%E5%9B%BE%E5%B1%82%E6%96%87%E5%AD%97/" class="trm-cover-frame trm-anima-link">
-            
-            
-                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
-            
-        </a>
-        
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" /categories/GIS/">
-                    GIS
-                </a>
-            </div>
-            <h5>
-                <a href="/2023/03/06/%E5%9B%BE%E5%B1%82%E6%96%87%E5%AD%97/" class="trm-anima-link">
-                    图层文字
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>23/03/06</li>
-                <li>16:05</li>
-                
-                
-            </ul>
-        </div>
-    </div>
-</div>
     
         <div class="col-lg-6">
     <div class="trm-blog-card trm-scroll-animation">
@@ -656,13 +374,42 @@
     </div>
 </div>
     
-</div>
-<!-- newest publications end -->
-
-
-    <div class="trm-pagination">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2022/08/08/vue%20%E7%88%B6%E5%AD%90%E4%BC%A0%E5%80%BC/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/Bug-%E4%B8%8E%E6%97%A5%E5%B8%B8/">
+                    Bug 与日常
+                </a>
+            </div>
+            <h5>
+                <a href="/2022/08/08/vue%20%E7%88%B6%E5%AD%90%E4%BC%A0%E5%80%BC/" class="trm-anima-link">
+                    vue 父子传值
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>22/08/08</li>
+                <li>18:08</li>
+                
+                
+            </ul>
+        </div>
     </div>
+</div>
+    
+</div>
+
+    
+
 
 
                     <div class="trm-divider footer-divider"></div>
@@ -695,6 +442,10 @@
 <div class="trm-fixed-container">
     
     
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
     
     <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
         <i class="iconfont fas fa-arrow-up"></i>
@@ -726,6 +477,10 @@
     
 
     <!-- 评论插件 -->
+    
+        
+
+        
     
 
 		

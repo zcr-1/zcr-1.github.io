@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="问题描述上传图片可以进行预览，删除 代码演示123456789101112131415161718192021222324252627282930&lt;el-upload     class&#x3D;&quot;avatar-uploader&quot;     action&#x3D;&quot;&quot;     :on-change&#x3D;&quot;getFilesj&quot;     :on-remove">
+<meta property="og:type" content="article">
+<meta property="og:title" content="el-upload 上传图片（plus）">
+<meta property="og:url" content="http://example.com/2024/04/10/el-upload%20%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%EF%BC%88plus%EF%BC%89/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="问题描述上传图片可以进行预览，删除 代码演示123456789101112131415161718192021222324252627282930&lt;el-upload     class&#x3D;&quot;avatar-uploader&quot;     action&#x3D;&quot;&quot;     :on-change&#x3D;&quot;getFilesj&quot;     :on-remove">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-10T09:17:28.000Z">
+<meta property="article:modified_time" content="2025-04-30T06:34:56.051Z">
+<meta property="article:author" content="钰淇">
+<meta name="twitter:card" content="summary">
+
+
+<title >el-upload 上传图片（plus）</title>
+
+<!-- Favicon -->
+
+    <link href='/img/favicon.svg?v=2.2.4' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/favicon.svg?v=2.2.4' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"example.com","author":"钰淇","root":"/","typed_text":null,"theme_version":"2.2.4","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2025-04-30 14:34:56"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.4" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+ 
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/img/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            z<span>Lucky</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    首页
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    归档
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            el-upload 上传图片（plus）
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2024
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/img/avatar.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        钰淇
+    </h5>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com" title="Github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                地址:
+            </div>
+            <div class="trm-label trm-label-light">
+                Mars
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            04/10
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            17:17
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            钰淇
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>上传图片可以进行预览，删除</p>
+<h3 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-upload</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">class</span>=<span class="string">&quot;avatar-uploader&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">action</span>=<span class="string">&quot;&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">:on-change</span>=<span class="string">&quot;getFilesj&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">:on-remove</span>=<span class="string">&quot;handlePicRemovesj&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:on-preview</span>=<span class="string">&quot;handlePicPreviewsj&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">v-model</span>=<span class="string">&quot;files&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">:limit</span>=<span class="string">&quot;3&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">list-type</span>=<span class="string">&quot;picture-card&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:file-list</span>=<span class="string">&quot;filelistsj&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">:auto-upload</span>=<span class="string">&quot;false&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 图标 --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">el-icon</span> <span class="attr">style</span>=<span class="string">&quot;font-size: 25px;&quot;</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">Plus</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-icon</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-upload</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">el-dialog</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">v-model</span>=<span class="string">&quot;dialogVisiblesj&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">title</span>=<span class="string">&quot;预览&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">destroy-on-close</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">:src</span>=<span class="string">&quot;dialogImageUrsj&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">style</span>=<span class="string">&quot;</span></span></span><br><span class="line"><span class="string"><span class="tag">	      display: block;</span></span></span><br><span class="line"><span class="string"><span class="tag">	      max-width: 500px;</span></span></span><br><span class="line"><span class="string"><span class="tag">	      margin: 0 auto;</span></span></span><br><span class="line"><span class="string"><span class="tag">	      height: 500px;&quot;</span> </span></span><br><span class="line"><span class="tag">        /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-dialog</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">	  <span class="attr">filelistsj</span>: [],</span><br><span class="line">      <span class="attr">files</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">      <span class="attr">imgList</span>:[],</span><br><span class="line">      <span class="attr">dialogVisiblesj</span>:<span class="literal">false</span>,</span><br><span class="line">      <span class="attr">dialogImageUrsj</span>:<span class="string">&#x27;&#x27;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">methods</span>:&#123;</span><br><span class="line">	<span class="title function_">getFilesj</span>(<span class="params">file, fileList</span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(file)</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">imgList</span>.<span class="title function_">push</span>(file)</span><br><span class="line">      <span class="comment">// this.feedBackForm.files = </span></span><br><span class="line">      <span class="comment">// const isLt2M = file.size / 1024 / 1024 &lt; 2;</span></span><br><span class="line">      <span class="comment">// if (isLt2M) &#123;</span></span><br><span class="line">      <span class="comment">//   // uploadImgToBase64()返回一个Promise对象，通过.then()获取其数据。其中data.result是图片转成的base64值</span></span><br><span class="line">      <span class="comment">//   this.uploadImgToBase64(file.raw).then(async (data) =&gt; &#123;</span></span><br><span class="line">      <span class="comment">//     this.form.driverPhoto = data.result;//把图片转为base64</span></span><br><span class="line">      <span class="comment">//     this.listst = data.result; //下方做判断用的</span></span><br><span class="line">      <span class="comment">//   &#125;);</span></span><br><span class="line">      <span class="comment">// &#125; else &#123;</span></span><br><span class="line">      <span class="comment">//   this.$message.error(&quot;上传图片大小不能超过 2MB!&quot;);</span></span><br><span class="line">      <span class="comment">// &#125;</span></span><br><span class="line">      <span class="comment">// console.log(&quot; fileList-111&quot;, fileList);</span></span><br><span class="line">      <span class="comment">// console.log(&quot; file-111&quot;, file);</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//删除</span></span><br><span class="line">    <span class="title function_">handlePicRemovesj</span>(<span class="params">file, fileList</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">hideUploadEdit</span> = fileList.<span class="property">length</span> &gt;= <span class="number">1</span>;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">form</span>.<span class="property">driverPhoto</span> = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//预览</span></span><br><span class="line">    <span class="title function_">handlePicPreviewsj</span>(<span class="params">file</span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;file&quot;</span>, file.<span class="property">url</span>);</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">dialogImageUrsj</span> = file.<span class="property">url</span>;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">dialogVisiblesj</span> = <span class="literal">true</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/08/22/%E6%A0%B9%E6%8D%AE%E5%86%85%E5%AE%B9%E5%BE%AA%E7%8E%AF%E7%94%9F%E6%88%90%E5%9B%BE%E6%A0%87/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/Bug-%E4%B8%8E%E6%97%A5%E5%B8%B8/">
+                    Bug 与日常
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/08/22/%E6%A0%B9%E6%8D%AE%E5%86%85%E5%AE%B9%E5%BE%AA%E7%8E%AF%E7%94%9F%E6%88%90%E5%9B%BE%E6%A0%87/" class="trm-anima-link">
+                    图标循环生成，并垂直居中
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/08/22</li>
+                <li>18:08</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/04/08/%E8%B7%B3%E8%BD%AC%E9%9A%90%E8%97%8F%E8%B7%AF%E7%94%B1%EF%BC%8C%E5%B7%A6%E4%BE%A7%E8%8F%9C%E5%8D%95%E4%B8%8D%E9%AB%98%E4%BA%AE/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/Bug-%E4%B8%8E%E6%97%A5%E5%B8%B8/">
+                    Bug 与日常
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/04/08/%E8%B7%B3%E8%BD%AC%E9%9A%90%E8%97%8F%E8%B7%AF%E7%94%B1%EF%BC%8C%E5%B7%A6%E4%BE%A7%E8%8F%9C%E5%8D%95%E4%B8%8D%E9%AB%98%E4%BA%AE/" class="trm-anima-link">
+                    跳转隐藏路由，左侧菜单不高亮
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/04/08</li>
+                <li>16:05</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
+
+    
+
+    
+
+      
+
+     
+
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+            
+<div class="trm-fixed-container">
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.2.4"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+</body>
+
+</html>
