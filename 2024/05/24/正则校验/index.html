@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="一、身份证号验证123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778function validateIDCard(id) &#123;  &#x2F;&#x2F; 地区校验码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="校验表单(带接口)">
+<meta property="og:url" content="http://example.com/2024/05/24/%E6%AD%A3%E5%88%99%E6%A0%A1%E9%AA%8C/index.html">
+<meta property="og:site_name" content="zcr&#39;s blog">
+<meta property="og:description" content="一、身份证号验证123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778function validateIDCard(id) &#123;  &#x2F;&#x2F; 地区校验码">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-05-24T08:05:09.000Z">
+<meta property="article:modified_time" content="2025-05-07T06:15:03.692Z">
+<meta property="article:author" content="钰淇">
+<meta name="twitter:card" content="summary">
+
+
+<title >校验表单(带接口)</title>
+
+<!-- Favicon -->
+
+    <link href='/img/favicon.svg?v=2.2.4' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/favicon.svg?v=2.2.4' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"example.com","author":"钰淇","root":"/","typed_text":null,"theme_version":"2.2.4","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2025-05-07 14:15:03"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.4" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+ 
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/img/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            z<span>Lucky</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    首页
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    归档
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            校验表单(带接口)
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2024
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/img/avatar.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        钰淇
+    </h5>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com" title="Github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                地址:
+            </div>
+            <div class="trm-label trm-label-light">
+                Mars
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            05/24
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            16:05
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            钰淇
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h3 id="一、身份证号验证"><a href="#一、身份证号验证" class="headerlink" title="一、身份证号验证"></a>一、身份证号验证</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">validateIDCard</span>(<span class="params">id</span>) &#123;</span><br><span class="line">  <span class="comment">// 地区校验码</span></span><br><span class="line">  <span class="keyword">const</span> city = &#123;</span><br><span class="line">    <span class="number">11</span>: <span class="string">&quot;北京&quot;</span>,</span><br><span class="line">    <span class="number">12</span>: <span class="string">&quot;天津&quot;</span>,</span><br><span class="line">    <span class="number">13</span>: <span class="string">&quot;河北&quot;</span>,</span><br><span class="line">    <span class="number">14</span>: <span class="string">&quot;山西&quot;</span>,</span><br><span class="line">    <span class="number">15</span>: <span class="string">&quot;内蒙古&quot;</span>,</span><br><span class="line">    <span class="number">21</span>: <span class="string">&quot;辽宁&quot;</span>,</span><br><span class="line">    <span class="number">22</span>: <span class="string">&quot;吉林&quot;</span>,</span><br><span class="line">    <span class="number">23</span>: <span class="string">&quot;黑龙江&quot;</span>,</span><br><span class="line">    <span class="number">31</span>: <span class="string">&quot;上海&quot;</span>,</span><br><span class="line">    <span class="number">32</span>: <span class="string">&quot;江苏&quot;</span>,</span><br><span class="line">    <span class="number">33</span>: <span class="string">&quot;浙江&quot;</span>,</span><br><span class="line">    <span class="number">34</span>: <span class="string">&quot;安徽&quot;</span>,</span><br><span class="line">    <span class="number">35</span>: <span class="string">&quot;福建&quot;</span>,</span><br><span class="line">    <span class="number">36</span>: <span class="string">&quot;江西&quot;</span>,</span><br><span class="line">    <span class="number">37</span>: <span class="string">&quot;山东&quot;</span>,</span><br><span class="line">    <span class="number">41</span>: <span class="string">&quot;河南&quot;</span>,</span><br><span class="line">    <span class="number">42</span>: <span class="string">&quot;湖北&quot;</span>,</span><br><span class="line">    <span class="number">43</span>: <span class="string">&quot;湖南&quot;</span>,</span><br><span class="line">    <span class="number">44</span>: <span class="string">&quot;广东&quot;</span>,</span><br><span class="line">    <span class="number">45</span>: <span class="string">&quot;广西&quot;</span>,</span><br><span class="line">    <span class="number">46</span>: <span class="string">&quot;海南&quot;</span>,</span><br><span class="line">    <span class="number">50</span>: <span class="string">&quot;重庆&quot;</span>,</span><br><span class="line">    <span class="number">51</span>: <span class="string">&quot;四川&quot;</span>,</span><br><span class="line">    <span class="number">52</span>: <span class="string">&quot;贵州&quot;</span>,</span><br><span class="line">    <span class="number">53</span>: <span class="string">&quot;云南&quot;</span>,</span><br><span class="line">    <span class="number">54</span>: <span class="string">&quot;西藏&quot;</span>,</span><br><span class="line">    <span class="number">61</span>: <span class="string">&quot;陕西&quot;</span>,</span><br><span class="line">    <span class="number">62</span>: <span class="string">&quot;甘肃&quot;</span>,</span><br><span class="line">    <span class="number">63</span>: <span class="string">&quot;青海&quot;</span>,</span><br><span class="line">    <span class="number">64</span>: <span class="string">&quot;宁夏&quot;</span>,</span><br><span class="line">    <span class="number">65</span>: <span class="string">&quot;新疆&quot;</span>,</span><br><span class="line">    <span class="number">71</span>: <span class="string">&quot;台湾&quot;</span>,</span><br><span class="line">    <span class="number">81</span>: <span class="string">&quot;香港&quot;</span>,</span><br><span class="line">    <span class="number">82</span>: <span class="string">&quot;澳门&quot;</span>,</span><br><span class="line">    <span class="number">91</span>: <span class="string">&quot;国外&quot;</span></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 校验码权重和校验码计算</span></span><br><span class="line">  <span class="keyword">const</span> factor = [<span class="number">7</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">6</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">4</span>, <span class="number">2</span>];</span><br><span class="line">  <span class="keyword">const</span> parity = [<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;0&#x27;</span>, <span class="string">&#x27;X&#x27;</span>, <span class="string">&#x27;9&#x27;</span>, <span class="string">&#x27;8&#x27;</span>, <span class="string">&#x27;7&#x27;</span>, <span class="string">&#x27;6&#x27;</span>, <span class="string">&#x27;5&#x27;</span>, <span class="string">&#x27;4&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;2&#x27;</span>];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!<span class="regexp">/^\d&#123;17&#125;(\d|X|x)$/</span>.<span class="title function_">test</span>(id)) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// 格式校验</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!city[id.<span class="title function_">substr</span>(<span class="number">0</span>, <span class="number">2</span>)]) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// 地区校验</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> birthday = id.<span class="title function_">substr</span>(<span class="number">6</span>, <span class="number">8</span>);</span><br><span class="line">  <span class="keyword">if</span> (!<span class="regexp">/^\d&#123;8&#125;$/</span>.<span class="title function_">test</span>(birthday)) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// 出生日期格式校验</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> year = <span class="built_in">parseInt</span>(birthday.<span class="title function_">substr</span>(<span class="number">0</span>, <span class="number">4</span>), <span class="number">10</span>);</span><br><span class="line">  <span class="keyword">const</span> month = <span class="built_in">parseInt</span>(birthday.<span class="title function_">substr</span>(<span class="number">4</span>, <span class="number">2</span>), <span class="number">10</span>);</span><br><span class="line">  <span class="keyword">const</span> day = <span class="built_in">parseInt</span>(birthday.<span class="title function_">substr</span>(<span class="number">6</span>, <span class="number">2</span>), <span class="number">10</span>);</span><br><span class="line">  <span class="keyword">const</span> date = <span class="keyword">new</span> <span class="title class_">Date</span>(year, month - <span class="number">1</span>, day);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (date.<span class="title function_">getFullYear</span>() !== year || date.<span class="title function_">getMonth</span>() + <span class="number">1</span> !== month || date.<span class="title function_">getDate</span>() !== day) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// 出生日期有效性校验</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> sum = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">17</span>; i++) &#123;</span><br><span class="line">    sum += id[i] * factor[i];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> last = parity[sum % <span class="number">11</span>];</span><br><span class="line">  <span class="keyword">if</span> (last !== id[<span class="number">17</span>].<span class="title function_">toUpperCase</span>()) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// 校验码校验</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="传真号码验证"><a href="#传真号码验证" class="headerlink" title="传真号码验证"></a>传真号码验证</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> faxRegex = <span class="regexp">/^\d&#123;3&#125;-\d&#123;7&#125;$/</span>;</span><br><span class="line"><span class="keyword">const</span> faxNumber = <span class="string">&#x27;123-4567890&#x27;</span>;</span><br><span class="line"><span class="keyword">if</span> (faxRegex.<span class="title function_">test</span>(faxNumber)) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;传真号码格式正确&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;传真号码格式不正确&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="三、手机号码校验"><a href="#三、手机号码校验" class="headerlink" title="三、手机号码校验"></a>三、手机号码校验</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> phoneNumberRegex = <span class="regexp">/^1[3456789]\d&#123;9&#125;$/</span>;</span><br><span class="line"><span class="keyword">const</span> phoneNumber = <span class="string">&#x27;13912345678&#x27;</span>;</span><br><span class="line"><span class="keyword">if</span> (phoneNumberRegex.<span class="title function_">test</span>(phoneNumber)) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;手机号码格式正确&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;手机号码格式不正确&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="四、经纬度校验"><a href="#四、经纬度校验" class="headerlink" title="四、经纬度校验"></a>四、经纬度校验</h3>
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/05/28/%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98%E6%80%BB%E8%A7%88/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/Bug-%E4%B8%8E%E6%97%A5%E5%B8%B8/">
+                    Bug 与日常
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/05/28/%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98%E6%80%BB%E8%A7%88/" class="trm-anima-link">
+                    数组问题总览
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/05/28</li>
+                <li>18:08</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/04/10/el-upload%20%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%EF%BC%88plus%EF%BC%89/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/Bug-%E4%B8%8E%E6%97%A5%E5%B8%B8/">
+                    Bug 与日常
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/04/10/el-upload%20%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%EF%BC%88plus%EF%BC%89/" class="trm-anima-link">
+                    el-upload 上传图片（plus）
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/04/10</li>
+                <li>17:17</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
+
+    
+
+    
+
+      
+
+     
+
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+            
+<div class="trm-fixed-container">
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.2.4"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+</body>
+
+</html>
